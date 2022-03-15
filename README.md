@@ -1,4 +1,13 @@
 # challenge
+Create a single page application in VueJS to view thumbnails of products, allowing user to click on a single
+product to view full product details. We are looking for a simple and clean design with a focus on the product
+images. The layout must be responsive and work well on all devices (desktop, tablet, phone). The completed
+project should be visibly appealing as well as technically sound.
+
+
+This is the list of products for the user to be able to navigate through. Please show ItemID, ItemName,
+Description, Dimensions, and BasePrice. We use imageresizer (see above) so you can make thumbnails by
+appending query string parameters to the URL of the photoname property.
 
 ## Project setup
 ```
