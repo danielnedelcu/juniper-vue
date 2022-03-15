@@ -9,6 +9,8 @@ This is the list of products for the user to be able to navigate through. Please
 Description, Dimensions, and BasePrice. We use imageresizer (see above) so you can make thumbnails by
 appending query string parameters to the URL of the photoname property.
 
+Preview link: https://affectionate-bartik-306f83.netlify.app/
+
 ## Project setup
 ```
 yarn install
