@@ -1,0 +1,218 @@
+<template>
+    <div class="product__detail">
+      <div class="product__detail__image">
+        <figure>
+          <img :src="product.PhotoName" />
+        </figure>
+      </div>
+
+      <div class="product__detail__desc">
+        <section class="product__detail__desc--section">
+            <h2>{{product.ItemName}}</h2>
+            <p>{{product.Description}}</p>
+            <span>Id: {{product.ProductID}}</span>
+            <span>Dimensions: {{product.Dimensions}}</span>
+        </section>
+
+        <hr />
+
+        <section class="product__detail__purchase">
+          <div class="product__detail__purchase--price">
+            <div class="product__detail__purchase--total">{{formattedPrice}}</div>
+            <button name="AddToBag">Add To Bag</button>
+          </div>
+        </section>
+      </div>
+
+    </div>
+</template>
+
+<script>
+import { GETTER_PRODUCT }  from "../constants/getters.type";
+import { mapGetters } from 'vuex';
+
+export default {
+  name: 'ProductItem',
+
+  data:() => ({
+      product: ''
+  }),
+
+  computed: {
+    ...mapGetters ({
+        getProduct : 'productStore/' + GETTER_PRODUCT
+    }),
+
+    formattedPrice() {
+      const format = new Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'USD',
+              minimumFractionDigits: 2,
+          });
+
+      return format.format(this.product.BasePrice)
+    }
+  },
+
+  mounted() {
+    this.product = this.getProduct(this.$route.params.id);
+  }
+}
+</script>
+
+<style scoped lang="scss">
+  .product__detail {
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+
+
+    @media (min-width: 1366px) {
+      flex-flow: row;
+      padding: 50px;
+    }
+
+    &__image {
+      width: 100%;
+  
+      @media (min-width: 1366px) {
+        width: 50%;
+        align-items: center;
+        display: flex;
+      }
+
+      figure {
+        margin: 0 auto;
+        padding: 10% 20%;
+
+        @media (min-width: 1366px) {
+          width: 342px;
+          margin: 0 auto;
+          padding: 10%;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    &__desc {
+      width: 100%;
+  
+      @media (min-width: 1366px) {
+        width: 50%;
+      }
+  
+      &--section {
+        margin-bottom: 20px;
+        text-align: left;
+        display: flex;
+        flex-flow: column;
+
+        @media (min-width: 1366px) {
+          margin-bottom: 24px;
+        }
+      }
+  
+      h2 { 
+        font-weight: bold;
+        margin: 0;
+        font-size: 40px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+  
+      &--block {
+        margin-bottom: 10px;
+  
+        @media (min-width: 1366px) {
+          margin-bottom: 20px;
+        }
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+  
+        h4 {
+          font-weight: bold;
+          font-size: 17px;
+          line-height: 24px;
+          letter-spacing: -0.01em;
+          margin: 0;
+        }
+      }
+    }
+
+    &__purchase {
+        grid-gap: 36px 12px;
+        margin-top: 20px;
+        margin-bottom: 0;
+        display: flex;
+        flex-flow: column;
+
+        @media (min-width: 1366px) {
+          margin-top: 23px;
+        }
+
+        &--selectors {
+          flex-flow: row;
+          justify-content: space-between;
+        }
+
+        &--price {
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+          flex-flow: row;
+          display: flex;
+          align-items: center;
+
+          @media (min-width: 1366px) {
+            flex-flow: row;
+            justify-content: space-between;
+          }
+        }
+
+
+        &--total {
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 32px;
+          letter-spacing: -0.02em;
+          align-items: center;
+          display: flex;
+          width: 50%;
+          margin-bottom: 0;
+        }
+
+        button {
+          border: 2px solid #E6E6E6;
+          background-color: #fff;
+          width: 100%;
+          padding: 18px 16px;
+          font-weight: bold;
+          font-size: 17px;
+          line-height: 24px;
+          display: flex;
+          align-items: center;
+          letter-spacing: -0.01em;
+          justify-content: center;
+          cursor: pointer;
+          will-change: transition; 
+          transition: 250ms ease-out;
+          
+          &:hover {
+            background-color: #2b2b2b;
+            color: white;
+          }
+        }
+      }
+  }
+</style>
