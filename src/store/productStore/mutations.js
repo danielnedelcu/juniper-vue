@@ -43,7 +43,6 @@ const mutations = {
      */
     [MUTATE_SALESREP](state, obj) {    
         state.salesrepInfo = obj;
-        console.dir(state.salesrepInfo)
      }
 }
 

@@ -70,7 +70,6 @@ export default {
   mounted() {
     this.product = this.getProduct(this.$route.params.id);
     this.salesrepData = this.getSalesrep;
-    console.log(this.salesrepData );
   }
 }
 </script>
