@@ -85,7 +85,7 @@ export default {
       width: 100%;
       padding: 18px 16px;
       font-weight: bold;
-      font-size: 17px;
+      font-size: 14px;
       line-height: 24px;
       display: flex;
       align-items: center;
@@ -112,33 +112,23 @@ export default {
       text-align: left;
 
       h3 {
-        font-size: 25px;
+        font-size: 21px;
         line-height: 2rem;
         letter-spacing: 0.02em;
         color: black;
         margin: 0 0 10px;
         width: 70%;
-
-        @media (min-width: 1366px) {
-          font-size: 23px;
-          line-height: 1.7rem;
-        }
-  
       }
 
       h4 {
         color: black;
         margin: 20px 0;
-        font-size: 32px;
-
-        @media (min-width: 1366px) {
-          font-size: 35px;
-        }
+        font-size: 25px;
       }
 
       p {
         font-weight: normal;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 20px;
         letter-spacing: 0.02em;
         margin: 12px 0;

@@ -127,17 +127,12 @@ export default {
   
       h2 { 
         margin: 0;
-        font-size: 25px;
+        font-size: 22px;
         line-height: 2rem;
-
-        @media (min-width: 1366px) {
-          font-size: 23px;
-          line-height: 1.7rem;
-        }
       }
 
       p {
-        font-size: 20px;
+        font-size: 16px;
       }
   
       &--block {
@@ -194,7 +189,7 @@ export default {
 
         &--total {
           font-weight: bold;
-          font-size: 28px;
+          font-size: 25px;
           line-height: 32px;
           letter-spacing: -0.02em;
           align-items: center;
@@ -209,7 +204,7 @@ export default {
           width: 50%;
           padding: 18px 16px;
           font-weight: bold;
-          font-size: 17px;
+          font-size: 14px;
           line-height: 24px;
           display: flex;
           align-items: center;
