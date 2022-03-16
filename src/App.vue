@@ -31,11 +31,7 @@ export default {
 main {
   padding: 100px 15px;
   background-color: #eeede5;
-
-  @media (min-width: 1366px) {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  height: calc(100% - 100px);
 }
 
 body {
