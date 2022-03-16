@@ -10,7 +10,7 @@
         <div class="product__detail__desc">
           <section class="product__detail__desc--section">
               <h2 class="bold">{{product.ItemName}}</h2>
-              <p>{{product.Description}}</p>
+              <p v-if="product.Description.length">{{product.Description}}</p>
               <span>Id: {{product.ProductID}}</span>
               <span>Dimensions: {{product.Dimensions}}</span>
           </section>

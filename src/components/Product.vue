@@ -5,7 +5,7 @@
     </figure>
     <div class="product__grid--text">
         <h3 class="bold">{{ data.ItemName }}</h3>
-        <p>{{ data.Description }}</p>
+        <p v-if="data.Description.length">{{ data.Description }}</p>
         <span>ID: {{ data.ProductID }}</span>
         <span>Dimensions: {{ data.Dimensions }}</span>
         <h4 class="bold">{{ formattedPrice }}</h4>
@@ -116,7 +116,7 @@ export default {
         line-height: 2rem;
         letter-spacing: 0.02em;
         color: black;
-        margin: 0 0 10px;
+        margin: 0 0 20px;
         width: 70%;
       }
 
@@ -136,7 +136,7 @@ export default {
         font-size: 16px;
         line-height: 20px;
         letter-spacing: 0.02em;
-        margin: 12px 0;
+        margin: 0 0 12px;
       }
     }
   }
