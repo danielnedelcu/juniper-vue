@@ -5,10 +5,6 @@
     </figure>
     <div class="product__grid--text">
         <h3 class="bold">{{ data.ItemName }}</h3>
-        <p v-if="data.Description.length">{{ data.Description }}</p>
-        <span>ID: {{ data.ProductID }}</span>
-        <span>Dimensions: {{ data.Dimensions }}</span>
-        <h4 class="bold">{{ formattedPrice }}</h4>
         <div class="flex-spacer"></div>
         <button @click="$router.push({name: 'product', params: { id: data.ProductID}})">View product</button>
     </div>
