@@ -134,6 +134,11 @@ export default {
       p {
         font-size: 16px;
       }
+
+      span {
+        font-size: 14px;
+        line-height: 20px;
+      }
   
       &--block {
         margin-bottom: 10px;

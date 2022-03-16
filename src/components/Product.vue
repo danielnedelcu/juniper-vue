@@ -126,6 +126,11 @@ export default {
         font-size: 25px;
       }
 
+      span {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
       p {
         font-weight: normal;
         font-size: 16px;
