@@ -1,4 +1,7 @@
-import { MUTATE_ADD_PRODUCTS, MUTATE_MANUFACTURER, MUTATE_MANUFACTURER_NAME } from "../../constants/mutations.type";
+import { MUTATE_ADD_PRODUCTS, 
+         MUTATE_MANUFACTURER, 
+         MUTATE_MANUFACTURER_NAME, 
+         MUTATE_SALESREP } from "../../constants/mutations.type";
 
 const mutations = {
 
@@ -30,6 +33,17 @@ const mutations = {
      */
     [MUTATE_MANUFACTURER_NAME](state, str) {    
         state.manufacturerName = str;
+     },
+
+    /**
+     * Adds salesrep data to state
+     * 
+     * @param {*} state 
+     * @param {*} obj 
+     */
+    [MUTATE_SALESREP](state, obj) {    
+        state.salesrepInfo = obj;
+        console.dir(state.salesrepInfo)
      }
 }
 

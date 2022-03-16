@@ -1,5 +1,6 @@
 export default {
   products: [],
   manufacturerId: '',
-  manufacturerName: ''
+  manufacturerName: '',
+  salesrepInfo: {}
 }

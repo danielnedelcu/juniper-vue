@@ -20,8 +20,15 @@
           <section class="product__detail__purchase">
             <div class="product__detail__purchase--price">
               <div class="product__detail__purchase--total">{{formattedPrice}}</div>
-              <button name="AddToBag">Add To Bag</button>
-            </div>
+              <div class="product__detail__purchase--salesrep">
+                <span>Contact salesrep:</span>
+                <h4>{{ salesrepData.CreatedBy}}</h4>
+                <p>{{ salesrepData.Phone}}</p>
+                <a :href="`mailto:${salesrepData.EmailAddress }`" target="_blank">
+                  {{ salesrepData.EmailAddress }}
+                </a>
+              </div>
+            </div> 
           </section>
         </div>
       </div>
@@ -32,19 +39,21 @@
 </template>
 
 <script>
-import { GETTER_PRODUCT }  from "../constants/getters.type";
+import { GETTER_PRODUCT, GETTER_SALESREP }  from "../constants/getters.type";
 import { mapGetters } from 'vuex';
 
 export default {
   name: 'ProductItem',
 
   data:() => ({
-      product: ''
+      product: '',
+      salesrepData: {}
   }),
 
   computed: {
     ...mapGetters ({
-        getProduct : 'productStore/' + GETTER_PRODUCT
+        getProduct : 'productStore/' + GETTER_PRODUCT,
+        getSalesrep : 'productStore/' + GETTER_SALESREP
     }),
 
     formattedPrice() {
@@ -60,6 +69,8 @@ export default {
 
   mounted() {
     this.product = this.getProduct(this.$route.params.id);
+    this.salesrepData = this.getSalesrep;
+    console.log(this.salesrepData );
   }
 }
 </script>
@@ -135,6 +146,10 @@ export default {
         font-size: 16px;
       }
 
+      a {
+          color: #a6192d;
+      }
+
       span {
         font-size: 14px;
         line-height: 20px;
@@ -201,6 +216,20 @@ export default {
           display: flex;
           width: 50%;
           margin-bottom: 0;
+        }
+
+        &--salesrep {
+          text-align: right;
+
+          h4 {
+            font-size: 14px;
+            margin: 10px 0;
+          }
+
+          p {
+            font-size: 13px;
+            margin: 2px 0;
+          }
         }
 
         button {
