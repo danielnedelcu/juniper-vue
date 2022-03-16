@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import ProductList from "../views/ProductList.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes = [
   {
@@ -15,6 +16,10 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "product" */ '../views/Product.vue')
+  },
+  {
+    path: "/:catchAll(.*)",
+    component: NotFound
   }
 ]
 

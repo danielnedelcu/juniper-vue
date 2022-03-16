@@ -4,11 +4,11 @@
       <img :src="data.PhotoName" />
     </figure>
     <div class="product__grid--text">
-        <h3>{{ data.ItemName }}</h3>
+        <h3 class="bold">{{ data.ItemName }}</h3>
         <p>{{ data.Description }}</p>
         <span>ID: {{ data.ProductID }}</span>
         <span>Dimensions: {{ data.Dimensions }}</span>
-        <h4>{{ formattedPrice }}</h4>
+        <h4 class="bold">{{ formattedPrice }}</h4>
         <div class="flex-spacer"></div>
         <button @click="$router.push({name: 'product', params: { id: data.ProductID}})">View product</button>
     </div>
@@ -51,6 +51,10 @@ export default {
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
+
+    .bold {
+      font-weight: 600;
+    }
 
     .flex-spacer {
       flex-grow: 1;
@@ -108,20 +112,28 @@ export default {
       text-align: left;
 
       h3 {
-        font-size: 28px;
+        font-size: 25px;
         line-height: 2rem;
         letter-spacing: 0.02em;
-        font-weight: 400;
         color: black;
         margin: 0 0 10px;
         width: 70%;
+
+        @media (min-width: 1366px) {
+          font-size: 23px;
+          line-height: 1.7rem;
+        }
+  
       }
 
       h4 {
-        font-weight: bold;
         color: black;
         margin: 20px 0;
-        font-size: 38px;
+        font-size: 32px;
+
+        @media (min-width: 1366px) {
+          font-size: 35px;
+        }
       }
 
       p {

@@ -1,30 +1,34 @@
 <template>
+  <div v-if="this.product">
     <div class="product__detail">
-      <div class="product__detail__image">
-        <figure>
-          <img :src="product.PhotoName" />
-        </figure>
+        <div class="product__detail__image">
+          <figure>
+            <img :src="product.PhotoName" />
+          </figure>
+        </div>
+
+        <div class="product__detail__desc">
+          <section class="product__detail__desc--section">
+              <h2 class="bold">{{product.ItemName}}</h2>
+              <p>{{product.Description}}</p>
+              <span>Id: {{product.ProductID}}</span>
+              <span>Dimensions: {{product.Dimensions}}</span>
+          </section>
+
+          <hr />
+
+          <section class="product__detail__purchase">
+            <div class="product__detail__purchase--price">
+              <div class="product__detail__purchase--total">{{formattedPrice}}</div>
+              <button name="AddToBag">Add To Bag</button>
+            </div>
+          </section>
+        </div>
       </div>
-
-      <div class="product__detail__desc">
-        <section class="product__detail__desc--section">
-            <h2>{{product.ItemName}}</h2>
-            <p>{{product.Description}}</p>
-            <span>Id: {{product.ProductID}}</span>
-            <span>Dimensions: {{product.Dimensions}}</span>
-        </section>
-
-        <hr />
-
-        <section class="product__detail__purchase">
-          <div class="product__detail__purchase--price">
-            <div class="product__detail__purchase--total">{{formattedPrice}}</div>
-            <button name="AddToBag">Add To Bag</button>
-          </div>
-        </section>
-      </div>
-
     </div>
+  <div v-else>
+    <h1>Product Not Found</h1>
+  </div>
 </template>
 
 <script>
@@ -67,13 +71,15 @@ export default {
     flex-flow: column;
     border-bottom: 1px solid #E6E6E6;
     padding: 20px;
-    width: 90%;
     margin: 0 auto;
 
-
-    @media (min-width: 1366px) {
+    @media (min-width: 768px) {
       flex-flow: row;
       padding: 50px;
+    }
+
+    .bold {
+      font-weight: 600;
     }
 
     &__image {
@@ -120,9 +126,14 @@ export default {
       }
   
       h2 { 
-        font-weight: bold;
         margin: 0;
-        font-size: 40px;
+        font-size: 25px;
+        line-height: 2rem;
+
+        @media (min-width: 1366px) {
+          font-size: 23px;
+          line-height: 1.7rem;
+        }
       }
 
       p {
@@ -195,7 +206,7 @@ export default {
         button {
           border: 2px solid #E6E6E6;
           background-color: #fff;
-          width: 100%;
+          width: 50%;
           padding: 18px 16px;
           font-weight: bold;
           font-size: 17px;
