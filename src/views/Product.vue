@@ -216,6 +216,7 @@ export default {
           letter-spacing: -0.01em;
           justify-content: center;
           cursor: pointer;
+          color: #2b2b2b;
           will-change: transition; 
           transition: 250ms ease-out;
           

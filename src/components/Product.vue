@@ -93,6 +93,7 @@ export default {
       justify-content: center;
       margin-top: 25px;
       cursor: pointer;
+      color: #2b2b2b;
       will-change: transition; 
       transition: 250ms ease-out;
       
