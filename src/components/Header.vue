@@ -36,9 +36,15 @@ export default {
     width: 100%;
     align-items: center;
     box-shadow: 0px 0px 5px 0px rgba(73, 102, 123, 0.35);
+    margin: 0 15px 0 0;
+    padding: 0 15px;
 
-    img {
-      width: 50px;
+    figure {
+      margin: 0 15px 0 0;
+
+      img {
+        width: 50px;
+      }
     }
   }
 </style>
